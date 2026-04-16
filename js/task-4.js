@@ -4,12 +4,15 @@ const refs = {
 
 function onSubmitForm(event) {
   event.preventDefault();
-  if (refs.form.elements.email.value === "" || refs.form.elements.password.value === "") {
+  if (
+    refs.form.elements.email.value.trim() === "" ||
+    refs.form.elements.password.value.trim() === ""
+  ) {
     return alert("All form fields must be filled in");
   }
   const result = {
-    email: refs.form.elements.email.value,
-    password: refs.form.elements.password.value,
+    email: refs.form.elements.email.value.trim(),
+    password: refs.form.elements.password.value.trim(),
   };
   console.log(result);
   refs.form.reset();

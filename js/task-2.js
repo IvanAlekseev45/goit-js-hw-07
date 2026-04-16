@@ -29,7 +29,9 @@ const refs = {
   list: document.querySelector(".gallery"),
 };
 
-const result = images.map((image) => `<img src =${image.url} alt =${image.alt}>`).join("");
+const result = images
+  .map((image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+  .join("");
 
 refs.list.innerHTML = result;
 console.log(refs.list);
